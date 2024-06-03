@@ -13,7 +13,7 @@
             <header>
                 <nav class="navbar navbar-expand-md navbar-dark" style="background-color: green">
                     <div>
-                        <a href="https://www.javaguides.net" class="navbar-brand"> UserManagement App </a>
+                        <a href="http://localhost:8080/usermanagement/list" class="navbar-brand"> UserManagement App </a>
                     </div>
 
                     <ul class="navbar-nav">
