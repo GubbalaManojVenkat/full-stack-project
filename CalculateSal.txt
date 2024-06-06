@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class CalculateSal {
+
+    public static void main(String[] args) {
+        System.out.print("Enter the sal employees: ");
+        Scanner sc = new Scanner(System.in);
+
+        int salary = sc.nextInt();
+        int shifts = sc.nextInt();
+
+        int saving = calculateSal(salary, shifts);
+
+        if (saving != Integer.MIN_VALUE) {
+            System.out.println(saving);
+        }
+    }
+
+
+    public static int calculateSal(int salary, int shifts) {
+        if (salary > 8000) {
+            System.out.println("Salary too large");
+            return Integer.MIN_VALUE;
+        }
+        if (shifts < 0) {
+            System.out.println("Shifts too small");
+            return Integer.MIN_VALUE;
+        }
+        if (salary < 0) {
+            System.out.println("Salary too small");
+            return Integer.MIN_VALUE;
+        }
+
+
+        double foodExpense = 0.20 * salary;
+        double travelExpense = 0.30 * salary;
+        double shiftEarnings = 0.02 * salary * shifts;
+
+
+        double savings = salary - foodExpense - travelExpense + shiftEarnings;
+        return (int) savings;
+    }
+}
